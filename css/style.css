@@ -134,6 +134,16 @@ a{
     #header {
         left: -300px;
     }
+
+    #main {
+        margin-left: 0;
+    }
+
+    .container{
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
 }
 
 /* menu do header */
@@ -226,4 +236,14 @@ a{
     padding-bottom: 4px;
     letter-spacing: 2px;
     border-bottom: 3px solid #149ddd;
+}
+
+/* estrutura do site = corpo */
+#main {
+    margin-left: 300px;
+}
+
+.container {
+    padding-left: 30px;
+    padding-right: 30px;
 }
