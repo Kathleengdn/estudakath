@@ -129,6 +129,16 @@ a{
 }
 /* ajuste para o corpo de conteudo */
 
+/* estrutura do site = corpo */
+#main {
+    margin-left: 300px;
+}
+
+.container {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
 /* menu responsivo */
 @media (max-width: 1199px){
     #header {
@@ -184,7 +194,7 @@ a{
 .nav-menu .active:focus,
 .nav-menu li:hover>a {
     text-decoration: none;
-    color: var(--texto-claro);
+    color: var(--texto-escuro);
 }
 
 .nav-menu a:hover i,
@@ -262,16 +272,6 @@ a{
     }
 }
 
-/* estrutura do site = corpo */
-#main {
-    margin-left: 300px;
-}
-
-.container {
-    padding-left: 30px;
-    padding-right: 30px;
-}
-
 /* seções e titulos */
 section {
     padding: 60px;
@@ -282,7 +282,7 @@ section {
 .section-bg{
     /* escuro */
      background: rgb(113, 70, 154);
-     color: var(--texto-claro);
+     color: var(--texto-escuro);
 }
 
 /*estrutura do titulo*/
@@ -319,6 +319,7 @@ section {
     color: var(--texto-escuro);
     font-weight: 700;
     font-size: 26px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .sobre .content ul {
@@ -326,4 +327,24 @@ section {
     padding: 0;
 }
 
+.sobre .content ul li {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    color: var(--fundo-escuro);
+}
 
+.sobre .content ul strong{
+    margin-right: 10px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: var(--texto-escuro);
+}
+
+.sobre .content ul i {
+    color: var(--texto-escuro);
+    margin-right: 10px;
+    font-size: 20px;
+}
