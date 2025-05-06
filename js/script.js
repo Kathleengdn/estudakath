@@ -63,11 +63,11 @@
   /* Função waypoints */
   //js para skills = habilidade ou vendas
 
-  let skilsContent = select('.skills-content');
+  let skilsContent = select('.skills-content')
   if(skilsContent) { /* verificar se o elemento existe */
     new Waypoint({ /* criar uma instancia */
       element: skilsContent,
-      oofset: '80%', /* janela de visualização */
+      offset: '80%', /* janela de visualização */
       handler: function(direction) {
         let progress = select('.progress .progress-bar', true);
         progress.forEach((el) => {

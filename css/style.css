@@ -419,6 +419,13 @@ section {
 }
 
 .skills .progress-bar-bg {
-    background: var(--fundo-escuro);
+    background: var(--fundo-claro);
     height: 10px;
+}
+
+.skills .progress-bar {
+    height: 10px;
+    background: #161616;
+    transition: 5s;
+    width: 1px;
 }
