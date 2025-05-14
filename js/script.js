@@ -78,4 +78,17 @@
     }) 
   }
 
+  /* Isotope - Biblioteca para o filtro */
+
+    window.addEventListener ('load', () => {
+      let portfolioContainer = select(".portifolio-container");
+      if (portfolioConntainer) {
+        let portifolioIsotope = new Isotope(portfolioContainer, {
+          itemsSelector: '.portfolio-item'
+        });
+
+        let portfolioFilters = select('#portfolio-filters li', true )
+      }
+    });
+
  })()
