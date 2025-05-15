@@ -1,12 +1,12 @@
 (function () {
 
-    "use strict";
+  "use strict";
   /*O modo estrito ("use strict") é ativado para ajudar a detectar erros e comportamentos problemáticos no código. */
 
   /**
    * Função de seleção
    */
-  
+
   const select = (el, all = false) => {
     el = el.trim()
     if (all) {
@@ -20,8 +20,8 @@
    * Easy event listener function 
    * Função de Adição de Eventos (on)
    * Função espera que um evento ocorra e depois responde a ele  */
-  
-  
+
+
   const on = (type, el, listener, all = false) => {
     let selectEl = select(el, all)
     if (selectEl) {
@@ -35,7 +35,7 @@
 
   /* ativar botão menu no modo mobile */
 
-  on('click' , '.mobile-nav-toggle' , function() {
+  on('click', '.mobile-nav-toggle', function () {
     select('body').classList.toggle('mobile-nav-active')
     this.classList.toggle('bi-list')
     this.classList.toggle('bi-x')
@@ -45,11 +45,11 @@
   const typed = select('.typed');
 
   if (typed) {
-    let typed_strings = typed.getAttribute ('data-typed-items')
+    let typed_strings = typed.getAttribute('data-typed-items')
     typed_strings = typed_strings.split(',')
 
     new Typed('.typed', {
-      strings: typed_strings, 
+      strings: typed_strings,
       loop: true,
       typeSpeed: 100, // velocidade da digitação
       backSpeed: 50, //velocidade em apagar
@@ -58,37 +58,50 @@
   }
 
 
-  new PureCounter ();
+  new PureCounter();
 
   /* Função waypoints */
   //js para skills = habilidade ou vendas
 
   let skilsContent = select('.skills-content')
-  if(skilsContent) { /* verificar se o elemento existe */
+  if (skilsContent) { /* verificar se o elemento existe */
     new Waypoint({ /* criar uma instancia */
       element: skilsContent,
       offset: '80%', /* janela de visualização */
-      handler: function(direction) {
+      handler: function (direction) {
         let progress = select('.progress .progress-bar', true);
         progress.forEach((el) => {
           el.style.width = el.getAttribute('aria-valuenow') + '%'
         });
 
       }
-    }) 
+    })
   }
 
   /* Isotope - Biblioteca para o filtro */
 
-    window.addEventListener ('load', () => {
-      let portfolioContainer = select(".portifolio-container");
-      if (portfolioConntainer) {
-        let portifolioIsotope = new Isotope(portfolioContainer, {
-          itemsSelector: '.portfolio-item'
+  window.addEventListener('load', () => {
+    let portfolioContainer = select(".portfolio-container");
+    if (portfolioContainer) {
+      let portfolioIsotope = new Isotope(portfolioContainer, {
+        itemsSelector: '.portfolio-item'
+      });
+
+      let portfolioFilters = select('#portfolio-filters li', true);
+
+      on('click', '#portfolio-filters li', function (e) {
+        e.preventDefault();
+        portfolioFilters.forEach(function (el) {
+          el.classList.remove('filter-active');
+        });
+        this.classList.add('filter-active');
+
+        portfolioIsotope.arrange({
+          filter: this.getAttribute('data-filter')
         });
 
-        let portfolioFilters = select('#portfolio-filters li', true )
-      }
-    });
+      }, true);
+    }
+  });
 
- })()
+})()
